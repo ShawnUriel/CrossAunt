@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Bread</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script> <!-- Added defer to ensure the script loads after the DOM -->
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="Logo.jpg" alt="CrossAunt Logo">
+            <a href="index.html">CrossAunt</a>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">About</a>
+                <a href="bakery.html">Bakery</a>
+            </nav>
+            <a class="cta cart-icon" href="tray.html">Tray (<span id="tray-count">0</span>)</a>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html">About</a>
+            <a href="bakery.html">Bakery</a> 
+        </div>
+    </header>
+
+    <!-- Title Section -->
+    <section class="title-section">
+        <h1>Daily Bread</h1>
+    </section>
+    <h2 class="EXCLUSIVE">EXCLUSIVE BREAD FOR TODAY</h2> 
+    <!-- Bread Section -->
+    <section class="bread-section">
+        <!-- Bread Item 1 -->
+        <div class="bread-item">
+            <img src="wine.png" alt="Wine Croissant">
+            <h3>Wine Croissant</h3>
+            <p class="price">₱170.50</p>
+            <button class="add-to-tray" data-product-name="Wine Croissant" data-product-price="170.50">+</button>
+        </div>
+
+        <!-- Bread Item 2 -->
+        <div class="bread-item">
+            <img src="whitechoco.png" alt="White Chocolate Croissant">
+            <h3>White Chocolate Croissant</h3>
+            <p class="price">₱90.50</p>
+            <button class="add-to-tray" data-product-name="White Chocolate Croissant" data-product-price="90.50">+</button>
+        </div>
+
+        <!-- Bread Item 3 -->
+        <div class="bread-item">
+            <img src="burnt.png" alt="Burnt Cocoa Croissant">
+            <h3>Burnt Cocoa Croissant</h3>
+            <p class="price">₱120.50</p>
+            <button class="add-to-tray" data-product-name="Burnt Cocoa Croissant" data-product-price="120.50">+</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Message us on our Facebook page at <a href="https://www.facebook.com/CrossAunt">www.facebook.com/CrossAunt</a> and follow us on Instagram at <a href="https://www.instagram.com/Cross_Aunt">@Cross_Aunt</a>.
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Aunt - Tray</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="Logo.jpg" alt="CrossAunt Logo">
+            <a href="index.html">CrossAunt</a>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">About</a>
+                <a href="bakery.html">Bakery</a>
+            </nav>
+            <a class="cta" href="shipping.html">Continue to Shipping</a>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html">About</a>
+            <a href="bakery.html">Bakery</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="bakery-items">
+            <h2>Tray</h2>
+            <div id="tray-items"></div> 
+        </section>
+    
+        <section class="order-summary">
+            <h3>Order Summary</h3>
+            <p id="subtotal">Subtotal: ₱0.00</p>
+            <p>Shipping: ₱50.00</p>
+            <p id="tax">Tax: ₱0.00</p> <!-- Added Tax display -->
+            <p><strong id="total">Total: ₱0.00</strong></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Message us on our Facebook page at <a href="https://www.facebook.com/CrossAunt">www.facebook.com/CrossAunt</a> and follow us on Instagram at <a href="https://www.instagram.com/Cross_Aunt">@Cross_Aunt</a>.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const trayItemsDiv = document.getElementById('tray-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+
+            // Retrieve cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Function to display tray items
+            function displayTrayItems() {
+                trayItemsDiv.innerHTML = ''; // Clear existing items
+                let subtotal = 0;
+
+                cart.forEach((item, index) => {
+                    // Create item div
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'tray-item';
+                    itemDiv.innerHTML = `
+                        <span>${item.name} - ₱${item.price.toFixed(2)} (x${item.quantity})</span>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    `;
+                    trayItemsDiv.appendChild(itemDiv);
+
+                    // Calculate subtotal
+                    subtotal += item.price * item.quantity;
+                });
+
+                // Update subtotal and total
+                subtotalElement.textContent = `Subtotal: ₱${subtotal.toFixed(2)}`;
+                const shipping = 50.00; // Flat rate for simplicity
+                const total = subtotal + shipping;
+                totalElement.textContent = `Total: ₱${total.toFixed(2)}`;
+            }
+
+            // Function to remove item
+            window.removeItem = function(index) {
+                cart.splice(index, 1); // Remove item at index
+                localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+                displayTrayItems(); // Refresh display
+            };
+
+            // Display items on load
+            displayTrayItems();
+        });
+    </script>
+</body>
+</html>

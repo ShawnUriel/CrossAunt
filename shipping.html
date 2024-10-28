@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+    <title>CrossAunt Shipping</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="Logo.jpg" alt="CrossAunt Logo">
+                <a href="index.html">CrossAunt</a>
+            </div>
+            <div class="nav-container">
+                <nav>
+                    <a href="index.html">About</a>
+                    <a href="dailyBread.html">Daily Bread</a>
+                </nav>
+                <a class="cta cart-icon" href="tray.html">Tray (<span id="tray-count">0</span>)</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html">About</a>
+                <a href="dailyBread.html">Daily Bread</a>
+            </div>
+        </header>
+
+        <main>
+            <h2 class="shipping-title">Shipping</h2>
+        
+            <form action="#" method="POST" class="shipping-form" id="shipping-form">
+                <div class="form-group">
+                    <label for="name">Enter Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="contact">Enter Contact Number</label>
+                    <input type="text" id="contact" name="contact" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="province">Province</label>
+                    <select id="province" name="province" required>
+                            <option value="">Select Province</option>
+                            <option value="Abra">Abra</option>
+                            <option value="Agusan del Norte">Agusan del Norte</option>
+                            <option value="Agusan del Sur">Agusan del Sur</option>
+                            <option value="Aklan">Aklan</option>
+                            <option value="Albay">Albay</option>
+                            <option value="Antique">Antique</option>
+                            <option value="Apayao">Apayao</option>
+                            <option value="Aurora">Aurora</option>
+                            <option value="Basilan">Basilan</option>
+                            <option value="Bataan">Bataan</option>
+                            <option value="Batanes">Batanes</option>
+                            <option value="Batangas">Batangas</option>
+                            <option value="Benguet">Benguet</option>
+                            <option value="Biliran">Biliran</option>
+                            <option value="Bohol">Bohol</option>
+                            <option value="Bukidnon">Bukidnon</option>
+                            <option value="Bulacan">Bulacan</option>
+                            <option value="Cagayan">Cagayan</option>
+                            <option value="Camarines Norte">Camarines Norte</option>
+                            <option value="Camarines Sur">Camarines Sur</option>
+                            <option value="Camiguin">Camiguin</option>
+                            <option value="Capiz">Capiz</option>
+                            <option value="Catanduanes">Catanduanes</option>
+                            <option value="Cavite">Cavite</option>
+                            <option value="Cebu">Cebu</option>
+                            <option value="Compostela Valley">Compostela Valley</option>
+                            <option value="Cotabato">Cotabato</option>
+                            <option value="Davao de Oro">Davao de Oro</option>
+                            <option value="Davao del Norte">Davao del Norte</option>
+                            <option value="Davao del Sur">Davao del Sur</option>
+                            <option value="Davao Occidental">Davao Occidental</option>
+                            <option value="Davao Oriental">Davao Oriental</option>
+                            <option value="Dinagat Islands">Dinagat Islands</option>
+                            <option value="Eastern Samar">Eastern Samar</option>
+                            <option value="Guimaras">Guimaras</option>
+                            <option value="Ifugao">Ifugao</option>
+                            <option value="Ilocos Norte">Ilocos Norte</option>
+                            <option value="Ilocos Sur">Ilocos Sur</option>
+                            <option value="Iloilo">Iloilo</option>
+                            <option value="Isabela">Isabela</option>
+                            <option value="Kalinga">Kalinga</option>
+                            <option value="La Union">La Union</option>
+                            <option value="Laguna">Laguna</option>
+                            <option value="Lanao del Norte">Lanao del Norte</option>
+                            <option value="Lanao del Sur">Lanao del Sur</option>
+                            <option value="Leyte">Leyte</option>
+                            <option value="Maguindanao">Maguindanao</option>
+                            <option value="Marinduque">Marinduque</option>
+                            <option value="Masbate">Masbate</option>
+                            <option value="Misamis Occidental">Misamis Occidental</option>
+                            <option value="Misamis Oriental">Misamis Oriental</option>
+                            <option value="Mountain Province">Mountain Province</option>
+                            <option value="Negros Occidental">Negros Occidental</option>
+                            <option value="Negros Oriental">Negros Oriental</option>
+                            <option value="Northern Samar">Northern Samar</option>
+                            <option value="Nueva Ecija">Nueva Ecija</option>
+                            <option value="Nueva Vizcaya">Nueva Vizcaya</option>
+                            <option value="Occidental Mindoro">Occidental Mindoro</option>
+                            <option value="Oriental Mindoro">Oriental Mindoro</option>
+                            <option value="Palawan">Palawan</option>
+                            <option value="Pampanga">Pampanga</option>
+                            <option value="Pangasinan">Pangasinan</option>
+                            <option value="Quezon">Quezon</option>
+                            <option value="Quirino">Quirino</option>
+                            <option value="Rizal">Rizal</option>
+                            <option value="Romblon">Romblon</option>
+                            <option value="Samar">Samar</option>
+                            <option value="Sarangani">Sarangani</option>
+                            <option value="Siquijor">Siquijor</option>
+                            <option value="Sorsogon">Sorsogon</option>
+                            <option value="South Cotabato">South Cotabato</option>
+                            <option value="Southern Leyte">Southern Leyte</option>
+                            <option value="Sultan Kudarat">Sultan Kudarat</option>
+                            <option value="Sulu">Sulu</option>
+                            <option value="Surigao del Norte">Surigao del Norte</option>
+                            <option value="Surigao del Sur">Surigao del Sur</option>
+                            <option value="Tarlac">Tarlac</option>
+                            <option value="Tawi-Tawi">Tawi-Tawi</option>
+                            <option value="Zambales">Zambales</option>
+                            <option value="Zamboanga del Norte">Zamboanga del Norte</option>
+                            <option value="Zamboanga del Sur">Zamboanga del Sur</option>
+                            <option value="Zamboanga Sibugay">Zamboanga Sibugay</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="barangay">Barangay (optional)</label>
+                    <input type="text" id="barangay" name="barangay"> <!-- Fixed ID and name -->
+                </div>
+        
+                <div class="form-group">
+                    <label for="street">Enter Building/Street Name</label>
+                    <input type="text" id="street" name="street" required>
+                </div>
+            </form>
+        
+            <section class="order-summary2">
+                <h3>Order Summary</h3>
+                <div id="tray-items"></div> <!-- New container for displaying items -->
+                <p id="subtotal">Subtotal: ₱0.00</p>
+                <p>Shipping: ₱50.00</p>
+                <p id="tax">Tax: ₱0.00</p> <!-- Added Tax display -->
+                <p><strong id="total">Total: ₱0.00</strong></p>
+                <button type="button" class="continue-btn" id="continue-button">Continue to payment window</button>
+            </section>
+            
+        </main>
+
+        <footer>
+            <p>Message us on our Facebook page www.facebook.com/CrossAunt and Follow us on our Instagram www.instagram.com/Cross_Aunt</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const trayItemsDiv = document.getElementById('tray-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+            const shippingForm = document.getElementById('shipping-form'); // Reference to the form
+            const continueButton = document.getElementById('continue-button'); // Reference to the continue button
+        
+            // Retrieve cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+            // Function to display tray items
+            function displayTrayItems() {
+                trayItemsDiv.innerHTML = ''; // Clear existing items
+                let subtotal = 0;
+        
+                cart.forEach((item, index) => {
+                    // Create item div
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'tray-item';
+                    itemDiv.innerHTML = `
+                        <span>${item.name} - ₱${item.price.toFixed(2)} (x${item.quantity})</span>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    `;
+                    trayItemsDiv.appendChild(itemDiv);
+        
+                    // Calculate subtotal
+                    subtotal += item.price * item.quantity;
+                });
+        
+                // Update subtotal and total
+                subtotalElement.textContent = `Subtotal: ₱${subtotal.toFixed(2)}`;
+                const shipping = 50.00; // Flat rate for simplicity
+                const total = subtotal + shipping;
+                totalElement.textContent = `Total: ₱${total.toFixed(2)}`;
+            }
+        
+            // Function to update tray count on the entire website
+            function updateTrayCount() {
+                const trayCountElement = document.getElementById('tray-count');
+                if (trayCountElement) {
+                    const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+                    trayCountElement.textContent = totalCount;
+                }
+            }
+        
+            // Function to clear the cart and reset display
+            function clearCart() {
+                localStorage.removeItem('cart');
+                cart = []; // Clear the local cart array
+                displayTrayItems(); // Refresh tray display
+                updateTrayCount(); // Update tray count across pages
+            }
+        
+            // Function to handle payment button click
+            continueButton.addEventListener('click', function() {
+                // Show payment success alert
+                alert('Payment was successful!');
+        
+                // Clear the cart in localStorage
+                clearCart();
+                
+                // Reset the form
+                shippingForm.reset();
+                
+                // Reset the Select2 dropdown for province
+                $('#province').val(null).trigger('change');
+            });
+        
+            // Display items on load
+            displayTrayItems();
+        });
+    
+        $(document).ready(function() {
+            $('#province').select2({
+                dropdownAutoWidth: true,
+                width: '100%',
+                dropdownParent: $('#province').parent() 
+            });
+        });
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
